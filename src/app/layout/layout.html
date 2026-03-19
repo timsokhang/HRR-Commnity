@@ -1,0 +1,35 @@
+<div class="layout-container" [class.sidebar-open]="sidebarOpen">
+  <!-- Mobile overlay -->
+  <div class="sidebar-overlay" (click)="closeSidebar()"></div>
+
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>HRR Community</h2>
+    </div>
+    <nav class="nav-menu">
+      <a routerLink="/dashboard" routerLinkActive="active" class="nav-item" (click)="closeSidebar()">
+        <span class="icon">🔄</span>
+        Convert
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <button class="menu-toggle" (click)="toggleSidebar()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <div class="profile">
+        <div class="avatar">U</div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
